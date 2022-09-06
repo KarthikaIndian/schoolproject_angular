@@ -1,0 +1,58 @@
+<div class="container">
+    <div class=" row  ">
+      <div class="  d-flex  justify-content-between  mt-4 ">
+        <h3 class=" fw-bold ">Teachers List </h3>
+        <a routerLink="/teacher/teachercreate" class="btn btn-primary "> <i class="fa-solid fa-user"></i><i
+            class="fa-solid fa-plus pe-2 h5 "></i>Add Teacher </a>
+      </div>
+    </div>
+
+
+              <div class="row mt-3 mb-2">
+                <div class="col-sm-12 bg-muted">
+                  <div class="table-responsive">
+                    <table class="m-auto table table-hover  mb-3" >
+                      <tr class=" bg-secondary text-white fw-bold " >
+              <th scope="col">S.No</th>
+              <th scope="col">Name</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Email Id</th>
+              <th scope="col">Qualification</th>
+              <th scope="col">Joining Date</th>
+              <th colspan="2" class="text-center">Action</th>
+            
+            </tr>
+            <tbody >
+<tr *ngFor ="let teacherlist of teacherdata">
+  <td>{{teacherlist.id}} </td>
+  <td>{{teacherlist.name }} </td>
+  
+ 
+<td>{{teacherlist.phonenumber}}</td>
+<td>{{teacherlist.email }}   </td>
+<td>{{teacherlist.qualification}}</td>
+<td>{{teacherlist.joningdate}}</td>
+<td><button class="btn btn-primary" routerLink ="/teacher/edit/{{teacherlist.id}}">Edit</button></td>
+<td><button class="btn btn-danger" (click)="delete(teacherlist.id)">Delete</button></td>
+</tr>
+            </tbody>
+          </table>
+        </div>
+        <nav aria-label="..." class="d-flex justify-content-end text-center mb-3">
+          <ul class="pagination text-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item " aria-current="page">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="student_list.html">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>

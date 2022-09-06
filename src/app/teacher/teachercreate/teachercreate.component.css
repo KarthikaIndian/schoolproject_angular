@@ -1,0 +1,26 @@
+input {
+    margin: 10px;
+}
+
+textarea {
+    margin: 10px;
+}
+
+select {
+    margin: 10px;
+}
+
+.date {
+    text-transform: uppercase !important;
+
+}
+
+label {
+    margin: 10px;
+}
+.error{
+    color: red;
+}
+.success{
+    color: green;
+}

@@ -1,0 +1,124 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class=" d-flex justify-content-between">
+            <span class=" fw-bold fs-3">
+                <u>Create Student </u>
+            </span>
+            <a routerLink="/student/studentlist" class="btn btn-primary px-4 py-2">Back</a>
+        </div>
+    </div>
+    <div class="col-md-12 mt-3">
+        <form [formGroup]="register" (ngSubmit)="savestudent()">
+            <div class="row mb-3 ">
+                <input type="hidden" class="form-control "  placeholder="id" >
+
+                <div class="col-sm-12 col-md-4">
+                    <input type="text" class="form-control " id="name" placeholder="Name" formControlName="studentname">
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <input type="text" class="form-control" id="fatherName" placeholder="Father name" formControlName="fathername">
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <input type="text" class="form-control" id="motherName" placeholder="Mother name" formControlName="mothername">
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <input type="text" class="form-control" id="standard" placeholder="Standard" formControlName="standard">
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="Phone number" formControlName="phonenumber">
+                </div>
+                <div class="col-sm-12  col-md-4">
+                    <div class="genderErrorId">
+                        <label class="ps-2 pt-3">Gender :</label>
+                        <input type="radio" name="gender" value="Male" class="ms-4" id="male" formControlName="gender" />Male
+                        <input type="radio" name="gender" value="Female" class="ms-4" id="female" formControlName="gender" />Female
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <textarea class="form-control" id="address" placeholder="Address" rows="4" formControlName="address"></textarea>
+                </div>
+                <div class="col-sm-12 col-md-8">
+                    <div class="row">
+                        <div class="col-sm-12  col-md-6">
+                            <input type="text" class="form-control" id="city" placeholder="City" formControlName="city">
+                        </div>
+                        <div class="col-sm-12  col-md-6">
+                            <input type="text" class="form-control" id="state" placeholder="State" formControlName="state">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12  col-md-6 ">
+                            <input type="text" class="form-control" id="pinCode" placeholder="Pin code" formControlName="pincode">
+                        </div>
+
+                        <div class="col-md-6 pt-2 ">
+                            <div id="language">
+                                <label class="ps-2">Language :</label>
+                                <input type="checkbox" class="language" value="English">English
+                                <input type="checkbox" class="language" value="Tamil">Tamil
+                                <input type="checkbox" class="language" value="Hindhi">Hindhi
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-12  col-md-4"><label class="ps-3">Date Of Birth</label>
+                    <input type="date" class="form-control date" id="dob" placeholder="date" formControlName="dob">
+                </div>
+                <div class="col-sm-12  col-md-4">
+                    <div><label class="ps-2">Blood Group</label></div>
+                    <select class="form-select" id="bloodGroup" formControlName="bloodgroup">
+                        <option value="">Select your blood group </option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center ">
+                        <div><label>Qualification</label></div>
+                        <tr class="table-secondary">
+                            <td scope="col">S.no</td>
+                            <td scope="col">Examination</td>
+                            <td scope="col">Board</td>
+                            <td scope="col">Percentage</td>
+                            <td scope="col">Year of Passing</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">1</td>
+                            <td>Class VIII</td>
+                            <td><input type="text" class="form-control border " id="eightBoard" formControlName="eightboard"></td>
+                            <td><input type="text" class="form-control border " id="eightPercentage" formControlName="eightpercentage" ></td>
+                            <td><input type="text" class="form-control border " id="eigthPassing" formControlName="eigthpassing"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">2</td>
+                            <td>Class X</td>
+                            <td><input type="text" class="form-control border" id="tenthBoard"formControlName="tenthboard" ></td>
+                            <td><input type="text" class="form-control border" id="tenthPercentage" formControlName="tenthpercentage" ></td>
+                            <td><input type="text" class="form-control border" id="tenthPassing" formControlName="tenthpassing" ></td>
+
+                        </tr>
+                    </table>
+                    <div class="col-md-4">
+                        <input type="checkbox" placeholder="" id="check">If all information correct submit
+                        <span id=tick></span>
+                    </div>
+                    <div class="d-flex justify-content-end gap-3">
+                        <input type="hidden" class="form-control" value="api" id="type">
+
+                        <button type="reset" class="btn btn-danger px-3" id="cancel" value="cancel"> Cancel</button>
+                        <button class="btn btn-success px-3 "  type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

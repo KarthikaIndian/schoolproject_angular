@@ -1,0 +1,20 @@
+.error {
+    color: red;
+    padding-left: 10px;
+}
+
+input {
+    margin: 10px;
+}
+
+textarea {
+    margin: 10px;
+}
+
+select {
+    margin: 10px;
+}
+
+label {
+    margin: 10px;
+}
