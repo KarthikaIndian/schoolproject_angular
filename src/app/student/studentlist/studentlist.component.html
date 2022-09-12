@@ -28,12 +28,12 @@
                 <td>{{students.id}} </td>
                 <td>{{students.studentname }} </td>
                 <td>{{students.fathername}} </td>
-              <td>{{students.dob }}   </td>
+              <td>{{students.dob|date: 'dd-MM-yyyy' }}   </td>
               <td>{{students.standard}}</td>
               <td>{{students.phonenumber}}</td>
               <td>{{students.bloodgroup}}</td>
-              <td><button class="btn btn-primary" routerLink ="/worker/edit/{{students.id}}">Edit</button></td>
-              <td><button class="btn btn-danger" (click)="delete(students.id)">Delete</button></td>
+              <td><button class="btn btn-primary" routerLink ="/student/edit/{{students.id}}">Edit</button></td>
+              <td><button class="btn btn-danger" (click) ="delete(students.id)">Delete</button></td>
               </tr>
             </tbody>
           </table>

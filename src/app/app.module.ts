@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TeacherlistComponent } from './teacher/teacherlist/teacherlist.component';
@@ -18,6 +18,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StudentComponent } from './student/student.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TeacherService } from './service/teacher.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SampleComponent } from './sample/sample.component';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +39,7 @@ import { TeacherService } from './service/teacher.service';
     HeaderComponent,
     FooterComponent,
     StudentComponent,
+    SampleComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +47,12 @@ import { TeacherService } from './service/teacher.service';
   ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+    
   
 
   ],

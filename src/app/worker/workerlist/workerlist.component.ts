@@ -9,23 +9,23 @@ import{ActivatedRoute}from '@angular/router'
 export class WorkerlistComponent implements OnInit {
 
   constructor(private service:WorkerService) {
-    this.loadworker()
+   
    }
   
   ngOnInit(): void {
+    this.loadworker()
   }
-  workerdata:any
-  loadworker(){
-    this.service.loadworker().subscribe(data=>{
-      this.workerdata=data
-    })
+  workerdata:any=[]
+   async loadworker() :Promise<any>{
+    this.workerdata=await this.service.loadworker();
+ 
     }
-    delete(id:any){
+   async delete(id:any):Promise<void>{
       if(confirm("Do you want to remove")){
-        this.service.removeworker(id).subscribe(data=>{
+       this.workerdata=await this.service.removeworker(id)
        this.loadworker();
-        })
       }
     }
+    
 
 }

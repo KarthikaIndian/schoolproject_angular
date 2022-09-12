@@ -12,18 +12,23 @@
 
                 <div class="col-md-4">
                     <input type="text" class="form-control" placeholder="First name" value="" id="firstName" formControlName="name">
+                    <span class="error" *ngIf="name&&name.invalid && name.touched">This field is required ! </span>
                 </div>
                 <div class="col-md-4">
                     <input type="text" class="form-control" value="" placeholder="Last name" id="lastName" formControlName="lastname">
+                    <span class="error" *ngIf="lastname&&lastname.invalid && lastname.touched">This field is required ! </span>
                 </div>
                 <div class="col-md-4">
                     <input type="text" class="form-control" placeholder="Phone number" value="" id="phoneNumber" formControlName="phonenumber">
+                    <span class="error" *ngIf="phonenumber&&phonenumber.invalid && phonenumber.touched">This field is required ! </span>
                 </div>
                 <div class="col-md-4">
                     <input type="text" class="form-control" placeholder="Email " value="" id="email" formControlName="email">
+                    <span class="error" *ngIf="email&&email.invalid && email.touched">This field is required ! </span>
                 </div>
                 <div class="col-md-4">
                     <input type="text" class="form-control" placeholder="Age" id="age" formControlName="age">
+                    <span class="error" *ngIf="age&&age.invalid && age.touched">This field is required ! </span>
                 </div>
                 <div class="col-md-4">
                     <select class="form-select" id="experiance" formControlName="experiance">
@@ -34,11 +39,12 @@
                         <option>3 - 4 year</option>
                         <option>more then 5 year</option>
                     </select>
+                    <span class="error" *ngIf="experiance&&experiance.invalid && experiance.touched">This field is required ! </span>
                 </div>
                 <div class="col-md-4 ps-3 pt-1"><label>Gender :</label>
                     <input type="radio" name="gender" value=" Male" class=" gender" formControlName="gender"/>Male
                     <input type="radio" name="gender" value=" Female" class=" gender"formControlName="gender" />Female<br>
-                    <span id="genderErrorId"></span>
+                    <span class="error" *ngIf="gender&&gender.invalid && gender.touched">This field is required ! </span>
                 </div>
                 <div class="col-sm-12  col-md-4">
                     <select class="form-select " id="bloodGroup" formControlName="bloodgroup">
@@ -52,6 +58,7 @@
                         <option>AB+</option>
                         <option>AB-</option>
                     </select>
+                    <span class="error" *ngIf="bloodgroup&&bloodgroup.invalid && bloodgroup.touched">This field is required ! </span>
                 </div>
                 <div class="col-md-4">
                     <select class="form-select " id="jobPosition" formControlName="jobposition">
@@ -61,26 +68,27 @@
                         <option>Attender </option>
                         <option>watchman</option>
                     </select>
+                    <span class="error" *ngIf="jobposition&&jobposition.invalid && jobposition.touched">This field is required ! </span>
                 </div>
                 <div class="col-md-4">
                     <textarea class="form-control" placeholder="Address " value="" id="address" formControlName="address"></textarea>
+                    <span class="error" *ngIf="address&&address.invalid && address.touched">This field is required ! </span>
                 </div>
                 <div class="col-md-4">
                     <input type="text" class="form-control" placeholder="Pin code" value="" id="pinCode" formControlName="pincode">
+                    <span class="error" *ngIf="pincode&&pincode.invalid && pincode.touched">This field is required ! </span>
                 </div>
                 <div class="col-md-4"><label>Joining Date</label>
                     <input type="date" class="form-control date" value="" id="joiningDate" formControlName="joningdate">
+                    <span class="error" *ngIf="joningdate&&joningdate.invalid && joningdate.touched">This field is required ! </span>
                 </div>
-                <div class="col-md-6">
-                    <input type="checkbox" placeholder="" id="check">If all information correct submit
-                    <span id=tick></span>
-                </div>
+                
             </div>
             <div class="d-flex justify-content-end gap-3 ">
                 <input type="hidden" class="form-control" value="api" id="type">
 
                 <button class="btn btn-danger px-3 " type="reset">Cancel</button>
-                <button class="btn btn-success px-3" type="submit" id="submit">Submit</button>
+                <button class="btn btn-success px-3" type="submit" id="submit" [disabled]="register.invalid">Submit</button>
             </div>
         </div>
     </form>

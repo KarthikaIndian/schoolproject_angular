@@ -33,7 +33,7 @@
             <td>{{workers.email }}   </td>
             <td>{{workers.age}}</td>
             <td>{{workers.jobposition}}</td>
-            <td>{{workers.joningdate}}</td>
+            <td>{{workers.joningdate|date: 'dd-MM-yyyy'}}</td>
             <td><button class="btn btn-primary" routerLink ="/worker/edit/{{workers.id}}">Edit</button></td>
 <td><button class="btn btn-danger" (click)="delete(workers.id)">Delete</button></td>
              </tr>
@@ -56,6 +56,8 @@
             </li>
           </ul>
         </nav>
+        
       </div>
     </div>
     </div>
+    

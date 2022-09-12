@@ -1,35 +1,54 @@
 import { Component, OnInit } from '@angular/core';
 import{TeacherService}from '../../service/teacher.service'
 import{ActivatedRoute}from '@angular/router'
+import { TeachercreateComponent } from '../teachercreate/teachercreate.component';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 @Component({
   selector: 'app-teacherlist',
   templateUrl: './teacherlist.component.html',
   styleUrls: ['./teacherlist.component.css']
 })
 export class TeacherlistComponent implements OnInit {
+  
 teacherid:any;
   constructor(private service:TeacherService ,private route:ActivatedRoute) { 
     this.loadteacher()
     this.teacherid=this.route.snapshot.paramMap.get('id')
     console.log(this.teacherid)
-    if(this.teacherid!=null){
-      // this.update(this.teacherid)
-    }
   }
 
 teacherdata:any;
 loadteacher(){
-this.service.loadteacher().subscribe(data=>{
+this.service.loadteacher().then(data=>{
   this.teacherdata=data
 })
 }
 delete(id:any){
-  if(confirm("Do you want to remove")){
-  this.service.removeteacher(id).subscribe(data=>{
+ 
+  this.service.removeteacher(id).then(data=>{
+  
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
  this.loadteacher();
+
   })
 }
-}
+
 //   teacher:any=[
 //     {
 //     id:1,

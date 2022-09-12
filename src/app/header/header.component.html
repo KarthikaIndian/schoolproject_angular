@@ -7,10 +7,10 @@
             <i class="bi bi-list"></i></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0  ">
-                <li class="nav-item"><a class="nav-link text-dark" aria-current="page" routerLink="/home">Home</a>
+                <li class="nav-item"><a class="nav-link text-dark" aria-current="page" routerLink="/home" routerLinkActive="active">Home</a>
                 </li>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link  text-dark dropdown-toggle   "
+                    <a href="#" class="nav-link  text-dark dropdown-toggle "routerLink="/teacher/teacherlist" routerLink="/teacher/teachercreate" routerLinkActive="active"
                         data-bs-toggle="dropdown">Teachers</a>
                     <div class="dropdown-menu">
                         <a routerLink="/teacher/teacherlist" class="dropdown-item ">Teachers List</a>
@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link  text-dark  dropdown-toggle  "
+                    <a href="#" class="nav-link  text-dark  dropdown-toggle  " routerLink="/student/studentlist" routerLink="/student/studentcreate" routerLinkActive="active"
                         data-bs-toggle="dropdown">Students</a>
                     <div class="dropdown-menu">
                         <a routerLink="/student/studentlist" class="dropdown-item ">Students List</a>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link   text-dark  dropdown-toggle " data-bs-toggle="dropdown">Workers</a>
+                    <a href="#" class="nav-link   text-dark  dropdown-toggle " data-bs-toggle="dropdown" routerLink="/worker/workercreate" routerLink="/worker/workerlist"  routerLinkActive="active" >Workers</a>
                     <div class="dropdown-menu">
                         <a routerLink="/worker/workerlist" class="dropdown-item ">Workers List</a>
                         <a routerLink="/worker/workercreate" class="dropdown-item ">Create Worker </a>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { SampleComponent } from './sample/sample.component';
 import { SignupComponent } from './signup/signup.component';
 import { StudentComponent } from './student/student.component';
 import { StudentcreateComponent } from './student/studentcreate/studentcreate.component';
@@ -21,11 +22,12 @@ const routes: Routes = [
   {path:'teacher/teacherlist',component:TeacherlistComponent},
   {path:'student/studentlist',component:StudentlistComponent},
   {path:'student/studentcreate',component:StudentcreateComponent},
-  {path:'student/edit/:id',component:TeachercreateComponent},
+  {path:'student/edit/:id',component:StudentcreateComponent},
   {path:'worker/workercreate',component:WorkercreateComponent},
   {path:'worker/workerlist',component:WorkerlistComponent},
-  {path:'worker/edit/:id',component:TeachercreateComponent},
+  {path:'worker/edit/:id',component:WorkercreateComponent},
   {path:'student',component:StudentComponent},
+  {path:'sample',component:SampleComponent},
   // { path: '**', redirectTo: 'student/studentlist' },
   
   
